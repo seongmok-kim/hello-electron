@@ -1,0 +1,20 @@
+{
+  "name": "hello-electron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev:vue": "cd frontend && npm run dev",
+    "dev:electron": "set NODE_ENV=development && wait-on http://localhost:5173 && electron .",
+    "dev": "concurrently \"npm run dev:vue\" \"npm run dev:electron\"",
+    "build": "cd frontend && npm run build && electron-builder"
+  },
+  "keywords": [],
+  "author": "smk",
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "electron": "^39.1.2",
+    "electron-builder": "^26.0.12",
+    "wait-on": "^9.0.3"
+  }
+}
