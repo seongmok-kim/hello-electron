@@ -5,7 +5,7 @@
   "main": "electron/main.js",
   "scripts": {
     "dev:vue": "cd frontend && npm run dev",
-    "dev:electron": "set NODE_ENV=development && wait-on http://localhost:5173 && electron .",
+    "dev:electron": "cross-env NODE_ENV=development electron .",
     "dev": "concurrently \"npm run dev:vue\" \"npm run dev:electron\"",
     "build": "cd frontend && npm run build && electron-builder"
   },
@@ -13,6 +13,7 @@
   "author": "smk",
   "devDependencies": {
     "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
     "electron": "^39.1.2",
     "electron-builder": "^26.0.12",
     "wait-on": "^9.0.3"
